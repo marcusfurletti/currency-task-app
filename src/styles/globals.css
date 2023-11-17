@@ -24,8 +24,33 @@
   padding: 2rem;
 }
 
+.title {
+  padding: 1rem 0 0;
+}
+
+.selectedCurrencyList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 0 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
 .currencyList {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.currencyItem {
+  padding: 2rem;
+  width: 130px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
