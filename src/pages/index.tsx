@@ -52,7 +52,11 @@ const index: React.FC = () => {
         <div className="currencyList">
           {currencyList.map((currency) => (
             <div
-              className="currencyItem"
+              className={`currencyItem ${
+                selectedCurrency.some((c) => c.id === currency.id)
+                  ? "currencySelected"
+                  : ""
+              }`}
               key={currency.id}
               onClick={() => handleClick(currency)}
             >

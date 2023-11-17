@@ -54,3 +54,15 @@
   justify-content: center;
   align-items: center;
 }
+
+.currencySelected {
+  padding: 2rem;
+  width: 130px;
+  border: 1px solid red;
+  color: red;
+  border-radius: 5px;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
