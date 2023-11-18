@@ -53,7 +53,7 @@ const CurrencyTask: React.FC = () => {
           ))}
         </div>
         <h2 className="title">Currency List</h2>
-        <div className="currencyList">
+        <div className="currencyList" data-testid="currency-list">
           {currencyList.map((currency) => (
             <div
               className="currencyItem"
@@ -64,6 +64,7 @@ const CurrencyTask: React.FC = () => {
                   ? "green"
                   : "black",
               }}
+              data-testid="currency-item"
             >
               {selectedCurrency.some((c) => c.id === currency.id) && (
                 <FontAwesomeIcon icon={faCheck} />
