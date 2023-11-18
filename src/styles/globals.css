@@ -51,18 +51,18 @@
   border-radius: 5px;
   margin: 1rem 0 0 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  gap: 1rem;
   align-items: center;
 }
 
-.currencySelected {
-  padding: 2rem;
-  width: 130px;
-  border: 1px solid red;
-  color: red;
-  border-radius: 5px;
-  margin: 1rem 0 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.deleteIcon {
+  padding: 0.3rem 0.45rem;
+  border: 1px solid #000;
+  border-radius: 30px;
+}
+
+.deleteIcon:hover {
+  color: #fff;
+  background-color: black;
 }
