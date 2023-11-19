@@ -10,7 +10,8 @@ import CurrencyTask from "./CurrencyTask";
 // 3. Removes currency item from the selected list when clicked;
 // 4. Removes currency item from the selected list when delete icon is clicked;
 // 5. Clicked currency item will have white background;
-// 6. Allow clicking on multiple currency items in the currency list.
+// 6. Allow clicking on multiple currency items in the currency list;
+// 7. X appears on the checkbox when clicked
 
 test("Renders currency list correctly", () => {
   render(<CurrencyTask />);
