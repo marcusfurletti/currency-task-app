@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { faX } from "@fortawesome/free-solid-svg-icons";
 
 interface Item {
   id: number;
@@ -39,28 +36,27 @@ const CurrencyTask: React.FC = () => {
   return (
     <div className="hero">
       <div className="container">
-        <h2 className="title">Seleceted Currencies</h2>
         <div
           className="selectedCurrencyList"
           data-testid="selected-currency-list"
         >
           {selectedCurrency.map((currency, index) => (
             <div
-              className="currencyItem"
+              className="selectedCurrencyItem"
               key={currency.id}
               data-testid={`selected-currency-item-${index + 1}`}
             >
-              <FontAwesomeIcon
-                icon={faX}
-                onClick={() => handleClick(currency)}
-                className="deleteIcon"
+              <div
+                className="deleteIconContainer"
                 data-testid="delete-icon"
-              />
-              {currency.name}
+                onClick={() => handleClick(currency)}
+              >
+                <p>X</p>
+              </div>
+              <div className="currencyName">{currency.name}</div>
             </div>
           ))}
         </div>
-        <h2 className="title">Currency List</h2>
         <div className="currencyList" data-testid="currency-list">
           {currencyList.map((currency) => (
             <div
@@ -68,15 +64,19 @@ const CurrencyTask: React.FC = () => {
               key={currency.id}
               onClick={() => handleClick(currency)}
               style={{
-                color: selectedCurrency.some((c) => c.id === currency.id)
-                  ? "green"
-                  : "black",
+                backgroundColor: selectedCurrency.some(
+                  (c) => c.id === currency.id
+                )
+                  ? "white"
+                  : "",
               }}
               data-testid="currency-item"
             >
-              {selectedCurrency.some((c) => c.id === currency.id) && (
-                <FontAwesomeIcon icon={faCheck} />
-              )}
+              <div className="checkBox">
+                {selectedCurrency.some((c) => c.id === currency.id) && (
+                  <p data-testid="checkbox-x">X</p>
+                )}
+              </div>
               {currency.name}
             </div>
           ))}

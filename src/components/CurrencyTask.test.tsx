@@ -9,9 +9,8 @@ import CurrencyTask from "./CurrencyTask";
 // 2. Shows currency item on the selected list when clicked;
 // 3. Removes currency item from the selected list when clicked;
 // 4. Removes currency item from the selected list when delete icon is clicked;
-// 5. Clicked currency item will become green;
-// 6. Unclicked currency items remain black;
-// 7. Allow clicking on multiple currency items in the currency list.
+// 5. Clicked currency item will have white background;
+// 6. Allow clicking on multiple currency items in the currency list.
 
 test("Renders currency list correctly", () => {
   render(<CurrencyTask />);
@@ -65,22 +64,13 @@ test("Removes currency item from the selected list when delete icon is clicked",
   expect(selectedCurrencyItem).not.toBeInTheDocument();
 });
 
-test("Clicked currency item will become green", () => {
+test("Clicked currency item will have white background", () => {
   render(<CurrencyTask />);
 
   const currencyItem = screen.getAllByTestId("currency-item")[0];
   fireEvent.click(currencyItem);
 
-  expect(currencyItem).toHaveStyle("color: green");
-});
-
-test("Unclicked currency items remain black", () => {
-  render(<CurrencyTask />);
-
-  const currencyItems = screen.getAllByTestId("currency-item");
-  const unclickedCurrencyItem = currencyItems[1];
-
-  expect(unclickedCurrencyItem).toHaveStyle("color: black");
+  expect(currencyItem).toHaveStyle("background-color: white");
 });
 
 test("Allow clicking on multiple currency items in the currency list", () => {
@@ -97,4 +87,15 @@ test("Allow clicking on multiple currency items in the currency list", () => {
 
   expect(selectedCurrencyItem1).toBeInTheDocument();
   expect(selectedCurrencyItem2).toBeInTheDocument();
+});
+
+test("X appears on the checkbox when clicked", () => {
+  render(<CurrencyTask />);
+
+  const currencyItem = screen.getAllByTestId("currency-item")[0];
+  fireEvent.click(currencyItem);
+
+  const xIcon = screen.getByTestId("checkbox-x");
+
+  expect(xIcon).toBeInTheDocument();
 });

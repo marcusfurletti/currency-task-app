@@ -2,10 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/*=====  PAGE LAYOUT  =====*/
+
 .hero {
-  background-color: #fafafa;
+  background-color: #fff;
   width: 100%;
   min-height: 100vh;
   height: 100%;
@@ -17,52 +20,96 @@
 
 .container {
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  max-width: 500px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border: 3px solid #dedede;
+  border-radius: 5px;
+  max-width: 475px;
   width: 100%;
-  padding: 2rem;
+  padding: 1rem;
 }
 
-.title {
-  padding: 1rem 0 0;
-}
+/*=====  SELECTED CURRENCY LIST LAYOUT  =====*/
 
 .selectedCurrencyList {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 0 0 1rem;
-  border-bottom: 1px solid #ccc;
+  padding: 1rem 0 2rem;
+  gap: 1rem;
 }
+
+.selectedCurrencyItem {
+  background-color: #e5e5e5;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  border-radius: 2px;
+  color: #000;
+  width: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.deleteIconContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -0.8rem -0.8rem 0 0;
+  background-color: #333;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 0.9rem;
+  border: 2px solid #fff;
+}
+
+.deleteIconContainer:hover {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  font-weight: bold;
+}
+
+/*=====  CURRENCY LIST LAYOUT  =====*/
 
 .currencyList {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 0.5rem;
 }
 
 .currencyItem {
-  padding: 2rem;
-  width: 130px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 1rem 0 0 0;
+  background-color: #ececec;
+  font-size: 1.5rem;
+  padding: 0.3rem;
+  margin: 0.2rem 0;
+  color: #144674;
+  width: 140px;
+  border: 2px solid #bbb;
   display: flex;
-  justify-content: space-around;
-  gap: 1rem;
+  gap: 0.3rem;
   align-items: center;
 }
 
-.deleteIcon {
-  padding: 0.3rem 0.45rem;
-  border: 1px solid #000;
-  border-radius: 30px;
+.currencyItem:hover {
+  background-color: #dcdcdc;
 }
 
-.deleteIcon:hover {
-  color: #fff;
-  background-color: black;
+.checkBox {
+  border: 2px solid #bbb;
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: red;
+  font-weight: bold;
 }
