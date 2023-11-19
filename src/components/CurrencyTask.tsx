@@ -40,13 +40,21 @@ const CurrencyTask: React.FC = () => {
     <div className="hero">
       <div className="container">
         <h2 className="title">Seleceted Currencies</h2>
-        <div className="selectedCurrencyList">
-          {selectedCurrency.map((currency) => (
-            <div className="currencyItem" key={currency.id}>
+        <div
+          className="selectedCurrencyList"
+          data-testid="selected-currency-list"
+        >
+          {selectedCurrency.map((currency, index) => (
+            <div
+              className="currencyItem"
+              key={currency.id}
+              data-testid={`selected-currency-item-${index + 1}`}
+            >
               <FontAwesomeIcon
                 icon={faX}
                 onClick={() => handleClick(currency)}
                 className="deleteIcon"
+                data-testid="delete-icon"
               />
               {currency.name}
             </div>
