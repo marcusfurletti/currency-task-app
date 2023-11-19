@@ -35,11 +35,10 @@
     "typescript": "^5"
   },
   "jest": {
-    "verbose": true,
+    "preset": "ts-jest",
     "transform": {
-      "^.+\\.tsx?$": "ts-jest",
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.[tj]sx?$": "babel-jest"
     },
-    "testEnvironment": "jsdom"
+    "verbose": true
   }
 }
