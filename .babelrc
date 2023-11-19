@@ -4,5 +4,5 @@
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
-  "plugins": ["@babel/plugin-syntax-jsx"]
+  "plugins": ["@babel/plugin-syntax-jsx", "@babel/plugin-transform-react-jsx"]
 }
