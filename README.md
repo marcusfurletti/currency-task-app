@@ -1,8 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Currency Selection App
 
-## Getting Started
+This project is a simple React application built with [Next.js](https://nextjs.org/) that allows users to select and manage a list of currencies. The main functionality of the app is to display a list of available currencies and allow users to add or remove them from a selected list.
 
-First, run the development server:
+## How to Run the Project
+
+1. Clone the repository to your local machine.
+2. Navigate to the project directory in your terminal.
+
+```bash
+cd your-project-directory
+```
+
+3. Install the project dependencies.
+
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+```
+
+4. Run the development server.
 
 ```bash
 npm run dev
@@ -14,27 +35,47 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open http://localhost:3000 in your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The project consists of a single React component named CurrencyTask. This component manages the state of selected currencies and provides a user interface to interact with the available currency list.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### "CurrencyTask" Component
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The CurrencyTask component renders a simple UI with two sections: the selected currency list and the available currency list.
 
-## Learn More
+The selected currency list displays the currencies that the user has chosen. Each selected currency item includes a delete icon, allowing the user to remove the currency from the selection.
 
-To learn more about Next.js, take a look at the following resources:
+The available currency list displays a list of currencies that the user can choose from. Clicking on a currency item adds it to the selected currency list. If a currency is already selected, clicking on it again removes it from the selection.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Testing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The application includes some basic tests to ensure that the currency selection functionality works as expected.
 
-## Deploy on Vercel
+I had some problems setting up the test environment. When the Babel file that supports the test was present, it wouldn't allow it to deploy on Vercel.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+For that, you'll need to create a file named ".babelrc" in the root directory and add following content:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```json
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": ["@babel/plugin-syntax-jsx", "@babel/plugin-transform-react-jsx"]
+}
+```
+
+After that, you can run the tests using the following command:
+
+```bash
+npm test
+# or
+yarn test
+# or
+pnpm test
+# or
+bun test
+```
