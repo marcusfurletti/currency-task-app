@@ -55,7 +55,7 @@ The application includes some basic tests to ensure that the currency selection 
 
 I had some problems setting up the test environment. When the Babel file that supports the test was present, it wouldn't allow it to deploy on Vercel.
 
-For that, you'll need to create a file named ".babelrc" in the root directory and add following content:
+For that, you'll need to create a file named ".babelrc" in the root directory and add the following content:
 
 ```json
 {
